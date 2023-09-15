@@ -8,6 +8,7 @@ public class Main01 {
     static int[][] ticket;
     static Scanner sc;
     static int winNum;
+    static int inputNum;
     static int count;
 
     public static void main(String[] args) {
@@ -19,19 +20,20 @@ public class Main01 {
                 {9, 10, 11, 12},
                 {13, 14, 15, 16}
         };
+        winNum = 15; ////Выигрышный номер
 
         sc = new Scanner(System.in);
         sc.useLocale(Locale.ENGLISH);
 
-        //Выигрышный номер
-        System.out.print("Enter winning number: ");
-        winNum = sc.nextInt();
+
+        System.out.print("Enter your number: ");
+        inputNum = sc.nextInt();
         sc.close();
 
-        //Сравнение выигрышного номера с номерами в билете
+        //Поиск в массиве и сравнение с выигрышным номером
         for (int[] num : ticket) {
             for (int n : num) {
-                if (n == winNum) {
+                if (n == inputNum && inputNum == winNum) {
                     count++;
                 }
             }
